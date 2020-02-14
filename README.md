@@ -1,26 +1,26 @@
 # Publish with tag action
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This action publishes npm packages under tags specified in release versions.
 The release tag must follow the semver standard.
 
 It must only be used on workflows triggered by releases.
 
+## Usage
 
-## Inputs
+### Inputs
 
 None
 
-## Outputs
+### Outputs
 
-### `version`
+|Name     |Description                     |
+|:-------:|--------------------------------|
+|`version`|The version that was published  |
+|`tag`    |The tag that was used to publish|
 
-The version that was published.
-
-### `tag`
-
-The tag that was used to publish.
-
-## Example usage
+### Workflow
 
 ```yaml
 name: Publish Example
@@ -43,4 +43,10 @@ jobs:
       uses: novom/publish-with-tag@v1.0.2
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - run: echo ${{ steps.publish.outputs.version }}
+    - run: echo ${{ steps.publish.outputs.tag }}
 ```
+
+## License
+
+This software uses the [MIT license](LICENSE.txt).
