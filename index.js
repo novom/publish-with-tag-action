@@ -12,9 +12,6 @@ async function publish() {
         stdout: (data) => {
           console.log(data.toString());
         },
-        stderr: (data) => {
-          throw new Error(data.toString());
-        },
       },
     };
 
