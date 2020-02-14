@@ -1,21 +1,29 @@
-# Hello world javascript action
+# Publish with tag action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action publishes npm packages under the correct tag.
+
+It must be used only on workflows triggered by releases.
+
+The release tag must follow the semver standard.
 
 ## Inputs
 
-### `who-to-greet`
-
-**Required** The name of the person to greet. Default `"World"`.
+None
 
 ## Outputs
 
-### `time`
+### `version`
 
-The time we greeted you.
+The version that was published.
+
+### `tag`
+
+The tag that was used to publish.
 
 ## Example usage
 
-uses: actions/hello-world-javascript-action@v1
-with:
-  who-to-greet: 'Mona the Octocat'
+```yaml
+uses: novom/publish-with-tag@v1
+env:
+  NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
