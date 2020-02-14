@@ -1,13 +1,10 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
+name: 'Publish With tag'
+description: 'Publish an npm package under the correct tag when using a workflow triggered by a release. The release version must follow semver.'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  version:
+    description: 'Version published'
+  tag:
+    description: 'Tag published under'
 runs:
   using: 'node12'
   main: 'index.js'
