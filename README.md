@@ -5,9 +5,12 @@
 This action publishes npm packages under tags specified in release versions.
 The release tag must follow the semver standard.
 
+## Usage
+
+You can include this action like any other in a workflow file.
 It must only be used on workflows triggered by releases.
 
-## Usage
+The `npm` command should also be available.
 
 ### Inputs
 
