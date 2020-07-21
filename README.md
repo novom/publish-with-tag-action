@@ -10,7 +10,7 @@ The release tag must follow the semver standard.
 
 This action must only be used on workflows triggered by releases.
 
-The `npm` command should be available.
+The `npm` command must be available.
 
 ```yaml
     - name: Publish Package
