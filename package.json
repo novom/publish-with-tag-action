@@ -4,7 +4,8 @@
   "description": "publish npm packages",
   "main": "dist/bundle.js",
   "scripts": {
-    "build": "yarn rollup --config"
+    "build": "yarn rollup --config",
+    "test": "yarn eslint src/"
   },
   "keywords": [
     "action",
