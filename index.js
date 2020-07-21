@@ -1,11 +1,11 @@
-const core = require('@actions/core');
-const github = require('@actions/github');
-const exec = require('@actions/exec');
+import core from '@actions/core';
+import exec from '@actions/exec';
+import github from '@actions/github';
 
 async function publish() {
   try {
     const versionTag = github.context.ref.split('/')[2].split('-');
-    let args = ['publish'];
+    const args = ['publish'];
     let tag = 'latest';
     const options = {
       listeners: {
@@ -19,8 +19,8 @@ async function publish() {
       console.log('Release is stable');
     } else {
       console.log('Release is a pre-release');
-      tag = versionTag[1].split('.')[0];
-      args.push('--tag=' + tag);
+      [tag] = versionTag[1].split('.');
+      args.push(`--tag=${tag}`);
     }
 
     await exec.exec('npm', args, options);
