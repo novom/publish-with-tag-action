@@ -2,9 +2,9 @@ name: 'Publish With tag'
 description: 'Publish an npm package under the correct tag when using a workflow triggered by a release. The release version must follow semver.'
 outputs:
   version:
-    description: 'Version published'
+    description: 'The version that was published'
   tag:
-    description: 'Tag published under'
+    description: 'The tag that was used to publish'
 runs:
   using: 'node12'
   main: 'dist/bundle.js'

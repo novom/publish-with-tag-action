@@ -2,15 +2,22 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This action publishes npm packages under tags specified in release versions.
+This action publishes npm packages when creating new releases. It publishes under custom tags if one is specified in the version `(e.g.: v1.0.0-alpha.1)`.
+
 The release tag must follow the semver standard.
 
 ## Usage
 
-You can include this action like any other in a workflow file.
-It must only be used on workflows triggered by releases.
+This action must only be used on workflows triggered by releases.
 
-The `npm` command should also be available.
+The `npm` command should be available.
+
+```yaml
+    - name: Publish Package
+      uses: novom/publish-with-tag-action@v1.0.3
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Only needed if package is published on github packages
+```
 
 ### Inputs
 
@@ -23,7 +30,7 @@ None
 |`version`|The version that was published  |
 |`tag`    |The tag that was used to publish|
 
-### Workflow
+## Example Workflow
 
 ```yaml
 name: Publish Example
@@ -43,7 +50,7 @@ jobs:
         node-version: '12.13'
 
     - name: Publish Package
-      uses: novom/publish-with-tag@v1.0.3
+      uses: novom/publish-with-tag-action@v1.0.3
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - run: echo ${{ steps.publish.outputs.version }}
