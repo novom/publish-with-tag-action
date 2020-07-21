@@ -43,7 +43,7 @@ jobs:
         node-version: '12.13'
 
     - name: Publish Package
-      uses: novom/publish-with-tag@v1.0.2
+      uses: novom/publish-with-tag@v1.0.3
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - run: echo ${{ steps.publish.outputs.version }}
