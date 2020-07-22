@@ -1,17 +1,32 @@
 {
-  "name": "publish-action",
+  "name": "publish-with-tag-action",
   "version": "1.0.3",
-  "description": "",
-  "main": "index.js",
+  "description": "publish npm packages",
+  "main": "dist/bundle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "yarn rollup --config",
+    "test": "yarn eslint src/"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "action",
+    "npm",
+    "publish"
+  ],
+  "author": "Novom Interactive",
+  "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.2",
     "@actions/exec": "^1.0.3",
     "@actions/github": "^2.1.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "rollup": "^2.22.1"
   }
 }
