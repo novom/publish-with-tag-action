@@ -1,5 +1,5 @@
-name: 'Publish With tag'
-description: 'Publish an npm package under the correct tag when using a workflow triggered by a release. The release version must follow semver.'
+name: 'Publish with tag action'
+description: 'Publish an npm package on release.'
 outputs:
   version:
     description: 'The version that was published'
