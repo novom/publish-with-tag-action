@@ -1,5 +1,5 @@
 name: 'Publish with tag action'
-description: 'Publish npm packages on releases.'
+description: 'Publish an npm package on release.'
 outputs:
   version:
     description: 'The version that was published'
