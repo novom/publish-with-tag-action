@@ -1,6 +1,6 @@
 {
   "name": "publish-with-tag-action",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "publish npm packages",
   "main": "dist/bundle.js",
   "scripts": {
