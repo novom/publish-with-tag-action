@@ -21,7 +21,9 @@ The `npm` command must be available.
 
 ### Inputs
 
-None
+|Name               |Description              |Default  |
+|:-----------------:|-------------------------|---------|
+|`working-directory`|The directory to publish |`.`      |
 
 ### Outputs
 
