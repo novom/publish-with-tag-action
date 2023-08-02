@@ -14,7 +14,7 @@ The `npm` command must be available.
 
 ```yaml
     - name: Publish Package
-      uses: novom/publish-with-tag-action@v1.0.4
+      uses: novom/publish-with-tag-action@v1.1.0-rc.3
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Only needed if package is published on github packages
 ```
@@ -52,7 +52,7 @@ jobs:
         node-version: '18.16'
 
     - name: Publish Package
-      uses: novom/publish-with-tag-action@v1.1.0-rc.2
+      uses: novom/publish-with-tag-action@v1.1.0-rc.3
       with:
         working-directory: '<directory to publish>'
       env:
