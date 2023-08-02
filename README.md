@@ -52,7 +52,7 @@ jobs:
         node-version: '18.16'
 
     - name: Publish Package
-      uses: novom/publish-with-tag-action@v1.1.0-rc.1
+      uses: novom/publish-with-tag-action@v1.1.0-rc.2
       with:
         working-directory: '<directory to publish>'
       env:

@@ -8,7 +8,7 @@ async function publish() {
     const versionTag = github.context.ref.split('/')[2].split('-');
     const args = ['publish'];
     let tag = 'latest';
-    const options = {
+    let options = {
       listeners: {
         stdout: (data) => {
           console.log(data.toString());
@@ -25,7 +25,10 @@ async function publish() {
     }
 
     if (workingDirectory) {
-      await exec.exec('cd', [workingDirectory], options);
+      options = {
+        ...options,
+        cwd: workingDirectory,
+      };
     }
     await exec.exec('npm', args, options);
     core.setOutput('version', versionTag.join('-'));
