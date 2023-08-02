@@ -21,7 +21,9 @@ The `npm` command must be available.
 
 ### Inputs
 
-None
+|Name               |Description              |Default  |
+|:-----------------:|-------------------------|---------|
+|`working-directory`|The directory to publish |`.`      |
 
 ### Outputs
 
@@ -47,10 +49,12 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
-        node-version: '12.13'
+        node-version: '18.16'
 
     - name: Publish Package
       uses: novom/publish-with-tag-action@v1.0.4
+      with:
+        working-directory: '<directory to publish>'
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - run: echo ${{ steps.publish.outputs.version }}

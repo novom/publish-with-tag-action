@@ -4,6 +4,7 @@ import github from '@actions/github';
 
 async function publish() {
   try {
+    const workingDirectory = core.getInput('working-directory');
     const versionTag = github.context.ref.split('/')[2].split('-');
     const args = ['publish'];
     let tag = 'latest';
@@ -23,6 +24,9 @@ async function publish() {
       args.push(`--tag=${tag}`);
     }
 
+    if (workingDirectory) {
+      await exec.exec('cd', [workingDirectory], options);
+    }
     await exec.exec('npm', args, options);
     core.setOutput('version', versionTag.join('-'));
     core.setOutput('tag', tag);

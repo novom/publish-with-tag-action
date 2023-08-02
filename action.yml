@@ -1,10 +1,15 @@
-name: 'Publish with tag action'
-description: 'Publish an npm package on release.'
+name: "Publish with tag action"
+description: "Publish an npm package on release."
+inputs:
+  working-directory:
+    description: "Working directory"
+    required: false
+    default: "."
 outputs:
   version:
-    description: 'The version that was published'
+    description: "The version that was published"
   tag:
-    description: 'The tag that was used to publish'
+    description: "The tag that was used to publish"
 runs:
-  using: 'node12'
-  main: 'dist/bundle.js'
+  using: "node16"
+  main: "dist/bundle.js"
