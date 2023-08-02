@@ -49,7 +49,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
       with:
-        node-version: '12.13'
+        node-version: '18.16'
 
     - name: Publish Package
       uses: novom/publish-with-tag-action@v1.0.4

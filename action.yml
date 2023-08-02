@@ -11,5 +11,5 @@ outputs:
   tag:
     description: "The tag that was used to publish"
 runs:
-  using: "node12"
+  using: "node16"
   main: "dist/bundle.js"
