@@ -25,7 +25,7 @@ async function publish() {
     }
 
     if (workingDirectory) {
-      await exec.exec('cd', workingDirectory, options);
+      await exec.exec('cd', [workingDirectory], options);
     }
     await exec.exec('npm', args, options);
     core.setOutput('version', versionTag.join('-'));
