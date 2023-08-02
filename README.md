@@ -53,6 +53,8 @@ jobs:
 
     - name: Publish Package
       uses: novom/publish-with-tag-action@v1.0.4
+      with:
+        working-directory: '<directory to publish>'
       env:
         NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - run: echo ${{ steps.publish.outputs.version }}
